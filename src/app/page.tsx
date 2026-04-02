@@ -12,10 +12,8 @@ import {
   Mail,
   Phone,
   Globe,
-  ChevronDown,
   School,
-  Sparkles,
-  Rocket,
+  ArrowRight,
 } from "lucide-react";
 
 const LinkedinIcon = ({ className }: { className?: string }) => (
@@ -34,26 +32,25 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-card-border/50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <span className="text-lg font-bold gradient-text">
-              Toriano Dewberry
+            <span className="text-base font-semibold text-accent tracking-tight">
+              Toriano Dewberry, LDO
             </span>
-            <div className="hidden md:flex items-center gap-6 text-sm text-muted">
-              <a href="#about" className="hover:text-foreground transition-colors">About</a>
-              <a href="#ventures" className="hover:text-foreground transition-colors">Ventures</a>
-              <a href="#community" className="hover:text-foreground transition-colors">Community</a>
-              <a href="#credentials" className="hover:text-foreground transition-colors">Credentials</a>
-              <a href="#vision" className="hover:text-foreground transition-colors">Vision</a>
-              <a href="#hobbies" className="hover:text-foreground transition-colors">Hobbies</a>
+            <div className="hidden md:flex items-center gap-8 text-sm">
+              <a href="#about" className="text-muted hover:text-foreground transition-colors">About</a>
+              <a href="#services" className="text-muted hover:text-foreground transition-colors">Services</a>
+              <a href="#community" className="text-muted hover:text-foreground transition-colors">Community</a>
+              <a href="#credentials" className="text-muted hover:text-foreground transition-colors">Credentials</a>
+              <a href="#vision" className="text-muted hover:text-foreground transition-colors">Vision</a>
               <a
                 href="https://myeyerx.net"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-accent hover:bg-accent-light text-white px-4 py-2 rounded-full text-sm font-medium transition-colors"
+                className="text-accent hover:text-accent-light font-medium transition-colors"
               >
-                Visit MyEyeRx
+                MyEyeRx.net
               </a>
             </div>
           </div>
@@ -61,192 +58,148 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center hero-gradient pt-16">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-        </div>
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            <div className="flex-shrink-0 animate-fade-in-up">
-              <div className="relative">
-                <div className="absolute -inset-1 bg-gradient-to-br from-accent to-gold rounded-full blur-sm opacity-60" />
-                <Image
-                  src="/toriano-dewberry.jpg"
-                  alt="Toriano Dewberry"
-                  width={280}
-                  height={280}
-                  className="relative rounded-full object-cover border-4 border-card-bg"
-                  priority
-                />
-              </div>
+      <section className="pt-32 pb-20 sm:pt-40 sm:pb-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+            <div className="flex-shrink-0">
+              <Image
+                src="/toriano-dewberry.jpg"
+                alt="Toriano Dewberry, Licensed Dispensing Optician"
+                width={240}
+                height={240}
+                className="rounded-2xl object-cover shadow-sm"
+                priority
+              />
             </div>
-            <div className="text-center lg:text-left animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-              <p className="text-accent-light font-medium tracking-wider uppercase text-sm mb-3">
-                Optician &bull; Entrepreneur &bull; Innovator
-              </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Toriano{" "}
-                <span className="gradient-text">Dewberry</span>
+            <div className="text-center md:text-left">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight mb-4">
+                Toriano Dewberry
               </h1>
-              <p className="text-lg sm:text-xl text-muted max-w-xl leading-relaxed mb-8">
-                CEO of MyEyeRx.net &amp; Dewberry Optical. Revolutionizing eye care
-                access, one community at a time. Bringing vision services into
-                schools and pioneering online eye care solutions.
+              <p className="text-accent font-medium text-sm tracking-wide uppercase mb-5">
+                Licensed Optician &middot; Entrepreneur &middot; Inventor
               </p>
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <p className="text-muted text-lg leading-relaxed max-w-lg mb-8">
+                Founder and CEO of MyEyeRx.net. Dedicated to expanding access to
+                professional eye care through innovation, community outreach, and
+                a commitment to serving those who need it most.
+              </p>
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
                 <a
                   href="https://myeyerx.net"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-full font-medium transition-colors"
+                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors"
                 >
-                  <Globe className="w-4 h-4" />
-                  MyEyeRx.net
-                </a>
-                <a
-                  href="https://dewberryoptical.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-card-border hover:border-accent text-foreground px-6 py-3 rounded-full font-medium transition-colors"
-                >
-                  <Eye className="w-4 h-4" />
-                  Dewberry Optical
+                  Visit MyEyeRx.net
+                  <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/toriano-dewberry-33882939/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-card-border hover:border-accent text-foreground p-3 rounded-full transition-colors"
-                  aria-label="LinkedIn"
+                  className="inline-flex items-center gap-2 border border-border hover:border-accent/40 text-muted hover:text-foreground px-5 py-2.5 rounded-lg text-sm font-medium transition-colors"
                 >
-                  <LinkedinIcon className="w-5 h-5" />
+                  <LinkedinIcon className="w-4 h-4" />
+                  LinkedIn
                 </a>
                 <a
                   href="https://www.facebook.com/toriano1/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-card-border hover:border-accent text-foreground p-3 rounded-full transition-colors"
-                  aria-label="Facebook"
+                  className="inline-flex items-center gap-2 border border-border hover:border-accent/40 text-muted hover:text-foreground px-5 py-2.5 rounded-lg text-sm font-medium transition-colors"
                 >
-                  <FacebookIcon className="w-5 h-5" />
+                  <FacebookIcon className="w-4 h-4" />
+                  Facebook
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <a
-          href="#about"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted hover:text-foreground transition-colors animate-bounce"
-        >
-          <ChevronDown className="w-6 h-6" />
-        </a>
       </section>
 
+      {/* Divider */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <hr className="border-border" />
+      </div>
+
       {/* About Section */}
-      <section id="about" className="py-24 relative">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-accent-light font-medium tracking-wider uppercase text-sm mb-3">
-              Who I Am
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold">
-              About <span className="gradient-text">Toriano</span>
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="glass-card rounded-2xl p-8">
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-3">
-                <Eye className="w-6 h-6 text-accent-light" />
-                The Eye Care Professional
-              </h3>
+      <section id="about" className="py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-10">
+            About
+          </h2>
+          <div className="grid md:grid-cols-2 gap-10">
+            <div>
+              <p className="text-muted leading-relaxed mb-5">
+                Toriano Dewberry is a licensed dispensing optician based in the
+                Detroit metropolitan area with over a decade of experience in eye
+                care. As the founder and CEO of MyEyeRx.net, he built one of the
+                first online platforms specializing in medical exemption
+                prescriptions for window tinting — a service that directly improves
+                driving safety and comfort for individuals with photosensitivity
+                and other light-related conditions.
+              </p>
               <p className="text-muted leading-relaxed">
-                Toriano Dewberry is a licensed optician based in the Detroit Metro area
-                with a deep passion for making quality eye care accessible to everyone.
-                As the founder and CEO of MyEyeRx.net, he pioneered one of the first
-                online eye care consultancies specializing in medical exemption
-                prescriptions for window tinting — a service that enhances driving
-                safety and comfort for individuals with light sensitivity conditions.
+                His approach to eye care is grounded in accessibility. Toriano
+                believes that professional vision services should be available to
+                everyone, regardless of income, insurance status, or geography.
               </p>
             </div>
-            <div className="glass-card rounded-2xl p-8">
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-3">
-                <Building2 className="w-6 h-6 text-gold" />
-                The Entrepreneur
-              </h3>
+            <div>
+              <p className="text-muted leading-relaxed mb-5">
+                In addition to MyEyeRx, Toriano is the principal of Dewberry
+                Optical, a designer eyewear brand, and DewberryMed, which provides
+                eye care exams and prescription eyeglasses for patients on
+                Medicaid and other government insurance programs.
+              </p>
               <p className="text-muted leading-relaxed">
-                Beyond MyEyeRx, Toriano is also the owner of Dewberry Optical, a
-                designer eyewear brand, and DewberryMed, which provides quality eyecare
-                exams and glasses for individuals on government insurance programs. His
-                entrepreneurial drive is fueled by a singular mission: to eliminate
-                barriers to eye care and bring innovative solutions to underserved
-                communities.
+                Across all of his ventures, a single mission holds: eliminate the
+                barriers that prevent people from receiving quality eye care, and
+                bring innovative, practical solutions to underserved communities.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Ventures Section */}
-      <section id="ventures" className="py-24 relative bg-card-bg/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-accent-light font-medium tracking-wider uppercase text-sm mb-3">
-              Business Portfolio
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold">
-              Entrepreneurial <span className="gradient-text">Ventures</span>
-            </h2>
-          </div>
+      {/* Services / Ventures Section */}
+      <section id="services" className="py-20 bg-section-alt">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-10">
+            Professional Ventures
+          </h2>
           <div className="grid md:grid-cols-3 gap-6">
             <a
               href="https://myeyerx.net"
               target="_blank"
               rel="noopener noreferrer"
-              className="glass-card rounded-2xl p-8 hover:border-accent/50 transition-all group"
+              className="bg-white rounded-xl p-7 border border-border hover:border-accent/30 transition-colors group"
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-accent/20 transition-colors">
-                <Globe className="w-6 h-6 text-accent-light" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+              <Globe className="w-5 h-5 text-accent mb-4" />
+              <h3 className="font-semibold mb-2 flex items-center gap-2">
                 MyEyeRx.net
-                <ExternalLink className="w-4 h-4 text-muted group-hover:text-accent-light transition-colors" />
+                <ExternalLink className="w-3.5 h-3.5 text-muted opacity-0 group-hover:opacity-100 transition-opacity" />
               </h3>
               <p className="text-muted text-sm leading-relaxed">
-                The pioneering online eye care consultancy specializing in medical
-                exemption prescriptions for window tinting. Connecting patients with
-                licensed doctors through virtual consultations for enhanced driving
-                safety and comfort.
+                Online eye care consultancy providing medical exemption
+                prescriptions for window tinting through licensed virtual
+                consultations.
               </p>
             </a>
-            <a
-              href="https://dewberryoptical.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-card rounded-2xl p-8 hover:border-accent/50 transition-all group"
-            >
-              <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-gold/20 transition-colors">
-                <Eye className="w-6 h-6 text-gold" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                Dewberry Optical
-                <ExternalLink className="w-4 h-4 text-muted group-hover:text-gold transition-colors" />
-              </h3>
+            <div className="bg-white rounded-xl p-7 border border-border">
+              <Eye className="w-5 h-5 text-accent mb-4" />
+              <h3 className="font-semibold mb-2">Dewberry Optical</h3>
               <p className="text-muted text-sm leading-relaxed">
-                A designer eyewear brand offering stylish, high-quality frames and
-                lenses. The &ldquo;Big&rdquo; collection features bold designs that combine
-                fashion-forward style with optical precision and comfort.
+                Designer eyewear brand offering high-quality frames and lenses,
+                combining modern style with optical precision and durability.
               </p>
-            </a>
-            <div className="glass-card rounded-2xl p-8">
-              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-5">
-                <Heart className="w-6 h-6 text-accent-light" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">DewberryMed</h3>
+            </div>
+            <div className="bg-white rounded-xl p-7 border border-border">
+              <Heart className="w-5 h-5 text-accent mb-4" />
+              <h3 className="font-semibold mb-2">DewberryMed</h3>
               <p className="text-muted text-sm leading-relaxed">
-                Providing quality eye care exams and prescription eyeglasses for
-                individuals on government insurance programs, including Medicaid.
-                Making professional eye care accessible to those who need it most.
+                Eye care exams and prescription eyeglasses for patients on
+                Medicaid and government insurance programs.
               </p>
             </div>
           </div>
@@ -254,91 +207,75 @@ export default function Home() {
       </section>
 
       {/* Community Impact Section */}
-      <section id="community" className="py-24 relative">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-accent-light font-medium tracking-wider uppercase text-sm mb-3">
-              Making a Difference
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold">
-              Community <span className="gradient-text">Impact</span>
-            </h2>
-          </div>
-          <div className="glass-card rounded-2xl p-8 md:p-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="relative z-10 grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
-                    <School className="w-6 h-6 text-accent-light" />
-                  </div>
-                  <h3 className="text-2xl font-bold">In-School Eye Exams</h3>
-                </div>
-                <p className="text-muted leading-relaxed mb-6">
-                  Every child deserves the gift of clear vision. Toriano and the MyEyeRx
-                  team bring Medicaid-friendly eye exams and prescription eyeglasses
-                  directly into public schools across Detroit and the greater Metro area,
-                  ensuring access to quality eye care where it&apos;s needed most.
-                </p>
-                <p className="text-muted leading-relaxed mb-6">
-                  Working alongside social workers, school counselors, educators, and
-                  parents, Toriano ensures students get the care they need to thrive —
-                  both in and out of the classroom. Uncorrected vision problems can lead
-                  to lower grades, behavioral challenges, and missed opportunities. His
-                  mobile children&apos;s optical services are changing that, one school at a
-                  time.
-                </p>
-                <a
-                  href="https://myeyerx.net/in-school-exams/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-accent-light hover:text-accent font-medium transition-colors"
-                >
-                  Learn more about in-school programs
-                  <ExternalLink className="w-4 h-4" />
-                </a>
+      <section id="community" className="py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-10">
+            Community Impact
+          </h2>
+          <div className="grid md:grid-cols-5 gap-10">
+            <div className="md:col-span-3">
+              <div className="flex items-center gap-3 mb-6">
+                <School className="w-5 h-5 text-accent" />
+                <h3 className="text-lg font-semibold">In-School Eye Exams</h3>
               </div>
-              <div className="space-y-6">
-                <div className="glass-card rounded-xl p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                      <Eye className="w-5 h-5 text-accent-light" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">Free Vision Screenings</h4>
-                      <p className="text-muted text-sm">
-                        Comprehensive screenings to identify children who need corrective
-                        lenses, delivered at no cost to families.
-                      </p>
-                    </div>
+              <p className="text-muted leading-relaxed mb-5">
+                In classrooms across Detroit and the greater Metro area, many
+                children struggle to learn simply because they cannot see
+                clearly. Uncorrected vision problems lead to lower grades,
+                behavioral challenges, and missed opportunities. For families
+                without resources, accessing care can feel impossible.
+              </p>
+              <p className="text-muted leading-relaxed mb-5">
+                Toriano and the MyEyeRx team bring Medicaid-friendly eye exams
+                and prescription eyeglasses directly into public schools. Working
+                alongside social workers, school counselors, educators, and
+                parents, they ensure students receive the care they need to
+                thrive — both in and out of the classroom.
+              </p>
+              <a
+                href="https://myeyerx.net/in-school-exams/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-accent hover:text-accent-light text-sm font-medium transition-colors"
+              >
+                Learn about the in-school program
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            </div>
+            <div className="md:col-span-2 space-y-5">
+              <div className="bg-section-alt rounded-xl p-5 border border-border">
+                <div className="flex items-start gap-3">
+                  <Eye className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="text-sm font-semibold mb-1">Free Vision Screenings</h4>
+                    <p className="text-muted text-sm leading-relaxed">
+                      Comprehensive screenings to identify children who need
+                      corrective lenses, at no cost to families.
+                    </p>
                   </div>
                 </div>
-                <div className="glass-card rounded-xl p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                      <Users className="w-5 h-5 text-gold" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">Medicaid-Covered Eyeglasses</h4>
-                      <p className="text-muted text-sm">
-                        Prescription eyeglasses provided through Medicaid coverage,
-                        removing financial barriers for families.
-                      </p>
-                    </div>
+              </div>
+              <div className="bg-section-alt rounded-xl p-5 border border-border">
+                <div className="flex items-start gap-3">
+                  <Users className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="text-sm font-semibold mb-1">Medicaid-Covered Eyeglasses</h4>
+                    <p className="text-muted text-sm leading-relaxed">
+                      Prescription eyeglasses provided through Medicaid,
+                      removing financial barriers for families.
+                    </p>
                   </div>
                 </div>
-                <div className="glass-card rounded-xl p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                      <Heart className="w-5 h-5 text-accent-light" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">Community Partnerships</h4>
-                      <p className="text-muted text-sm">
-                        Collaborating with educators, counselors, and parents to create a
-                        network of support for children&apos;s vision health.
-                      </p>
-                    </div>
+              </div>
+              <div className="bg-section-alt rounded-xl p-5 border border-border">
+                <div className="flex items-start gap-3">
+                  <Heart className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="text-sm font-semibold mb-1">School Partnerships</h4>
+                    <p className="text-muted text-sm leading-relaxed">
+                      Collaborating with educators and counselors to build a
+                      lasting support network for children&apos;s vision health.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -348,51 +285,42 @@ export default function Home() {
       </section>
 
       {/* Credentials Section */}
-      <section id="credentials" className="py-24 relative bg-card-bg/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-accent-light font-medium tracking-wider uppercase text-sm mb-3">
-              Qualifications
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold">
-              Credentials &amp; <span className="gradient-text">Expertise</span>
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="glass-card rounded-2xl p-6 text-center">
-              <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-7 h-7 text-accent-light" />
-              </div>
-              <h3 className="font-semibold mb-2">Licensed Optician</h3>
-              <p className="text-muted text-sm">
-                Professionally licensed eye care specialist serving the Michigan community
+      <section id="credentials" className="py-20 bg-section-alt">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-10">
+            Credentials &amp; Expertise
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="bg-white rounded-xl p-6 border border-border">
+              <Award className="w-5 h-5 text-accent mb-3" />
+              <h3 className="text-sm font-semibold mb-1.5">Licensed Dispensing Optician</h3>
+              <p className="text-muted text-sm leading-relaxed">
+                Professionally licensed to dispense, fit, and adjust corrective
+                eyewear in the state of Michigan.
               </p>
             </div>
-            <div className="glass-card rounded-2xl p-6 text-center">
-              <div className="w-14 h-14 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <GraduationCap className="w-7 h-7 text-gold" />
-              </div>
-              <h3 className="font-semibold mb-2">Wayne County Community College</h3>
-              <p className="text-muted text-sm">
-                Education focused on opticianry and eye care professional development
+            <div className="bg-white rounded-xl p-6 border border-border">
+              <GraduationCap className="w-5 h-5 text-accent mb-3" />
+              <h3 className="text-sm font-semibold mb-1.5">Wayne County Community College</h3>
+              <p className="text-muted text-sm leading-relaxed">
+                Formal education in opticianry and eye care professional
+                development.
               </p>
             </div>
-            <div className="glass-card rounded-2xl p-6 text-center">
-              <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Lightbulb className="w-7 h-7 text-accent-light" />
-              </div>
-              <h3 className="font-semibold mb-2">Inventor</h3>
-              <p className="text-muted text-sm">
-                Developing innovative solutions at the intersection of eye care and technology
+            <div className="bg-white rounded-xl p-6 border border-border">
+              <Lightbulb className="w-5 h-5 text-accent mb-3" />
+              <h3 className="text-sm font-semibold mb-1.5">Inventor</h3>
+              <p className="text-muted text-sm leading-relaxed">
+                Developing original solutions at the intersection of eye care
+                technology and patient accessibility.
               </p>
             </div>
-            <div className="glass-card rounded-2xl p-6 text-center">
-              <div className="w-14 h-14 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Building2 className="w-7 h-7 text-gold" />
-              </div>
-              <h3 className="font-semibold mb-2">Multi-Business CEO</h3>
-              <p className="text-muted text-sm">
-                Leading MyEyeRx.net, Dewberry Optical, and DewberryMed simultaneously
+            <div className="bg-white rounded-xl p-6 border border-border">
+              <Building2 className="w-5 h-5 text-accent mb-3" />
+              <h3 className="text-sm font-semibold mb-1.5">Founder &amp; CEO</h3>
+              <p className="text-muted text-sm leading-relaxed">
+                Leading MyEyeRx.net, Dewberry Optical, and DewberryMed as a
+                multi-venture operator.
               </p>
             </div>
           </div>
@@ -400,218 +328,189 @@ export default function Home() {
       </section>
 
       {/* Vision & Ambitions Section */}
-      <section id="vision" className="py-24 relative">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-accent-light font-medium tracking-wider uppercase text-sm mb-3">
-              Looking Forward
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold">
-              Dreams &amp; <span className="gradient-text">Ambitions</span>
-            </h2>
+      <section id="vision" className="py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-10">
+            Vision &amp; Ambitions
+          </h2>
+          <div className="grid md:grid-cols-2 gap-10 mb-10">
+            <div>
+              <h3 className="font-semibold mb-3 flex items-center gap-2">
+                <Target className="w-4 h-4 text-accent" />
+                Transforming Eye Care Access
+              </h3>
+              <p className="text-muted leading-relaxed mb-4">
+                Toriano envisions a future where quality eye care is a right, not
+                a privilege. His ambition is to fundamentally change how people
+                access vision services — breaking down barriers of cost,
+                geography, and insurance that leave millions underserved.
+              </p>
+              <p className="text-muted leading-relaxed">
+                Through telehealth innovation and community-based delivery, he is
+                building a model for how eye care can reach every community.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-3 flex items-center gap-2">
+                <Eye className="w-4 h-4 text-accent" />
+                Advancing the Industry
+              </h3>
+              <p className="text-muted leading-relaxed mb-4">
+                The eye care industry has long overlooked key areas — such as the
+                clinical benefits of medical window tinting for photosensitive
+                patients. Toriano identified this gap and built an entire platform
+                to address it.
+              </p>
+              <p className="text-muted leading-relaxed">
+                His roadmap includes expanding in-school programs nationally,
+                growing the Dewberry Optical brand, and introducing new
+                technologies that streamline how patients receive care.
+              </p>
+            </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="glass-card rounded-2xl p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <Rocket className="w-5 h-5 text-accent-light" />
-                </div>
-                <h3 className="text-xl font-semibold">Transforming Eye Care</h3>
-              </div>
-              <p className="text-muted leading-relaxed mb-4">
-                Toriano envisions a future where quality eye care is not a privilege but a
-                right. His ambition is to fundamentally change how people access eye care
-                services — breaking down the barriers of cost, geography, and
-                accessibility that leave millions underserved.
-              </p>
+          <div className="bg-section-alt rounded-xl p-8 border border-border">
+            <h3 className="font-semibold mb-4">The Entrepreneurial Approach</h3>
+            <div className="grid md:grid-cols-2 gap-6">
               <p className="text-muted leading-relaxed">
-                Through telehealth innovation and community-based delivery models, he&apos;s
-                building a blueprint for how eye care can reach every corner of every
-                community.
+                Every venture Toriano builds addresses a real, documented need —
+                from making medical tint prescriptions accessible online, to
+                providing eye exams in schools where children have no other path
+                to care. His approach is methodical: identify the gap, build the
+                solution, then scale it.
               </p>
-            </div>
-            <div className="glass-card rounded-2xl p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-gold" />
-                </div>
-                <h3 className="text-xl font-semibold">Big Changes in the Eye Care Space</h3>
-              </div>
-              <p className="text-muted leading-relaxed mb-4">
-                The eye care industry has long overlooked key areas — like the benefits
-                of medical window tinting for light-sensitive individuals. Toriano
-                identified this gap and built an entire platform to address it, proving
-                that innovation comes from those closest to the problem.
-              </p>
-              <p className="text-muted leading-relaxed">
-                His goal is to continue pushing boundaries: expanding in-school eye care
-                programs nationwide, growing the Dewberry Optical brand, and introducing
-                new technologies that make eye care more efficient and accessible.
-              </p>
-            </div>
-            <div className="glass-card rounded-2xl p-8 md:col-span-2">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <Target className="w-5 h-5 text-accent-light" />
-                </div>
-                <h3 className="text-xl font-semibold">The Entrepreneurial Mindset</h3>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                <p className="text-muted leading-relaxed">
-                  Toriano approaches business with a philosophy rooted in service. Every
-                  venture he builds solves a real problem — whether it&apos;s making medical
-                  tint prescriptions available online, bringing designer eyewear to
-                  market, or providing eye exams in schools where children have no other
-                  access to care.
+              <div>
+                <p className="text-muted leading-relaxed mb-4">
+                  For Toriano, entrepreneurship is not about building businesses
+                  for their own sake — it is about creating systems that generate
+                  lasting, measurable impact in people&apos;s lives.
                 </p>
-                <p className="text-muted leading-relaxed">
-                  His entrepreneurial bend isn&apos;t just about building businesses — it&apos;s
-                  about building systems that create lasting impact. As he often reflects:
-                  <span className="block mt-3 text-foreground italic border-l-2 border-accent pl-4">
-                    &ldquo;Strategy without tactics is the slowest route to victory. Tactics
-                    without strategy is the noise before defeat.&rdquo;
-                  </span>
-                </p>
+                <blockquote className="border-l-2 border-accent pl-4 text-foreground italic text-sm">
+                  &ldquo;Strategy without tactics is the slowest route to victory.
+                  Tactics without strategy is the noise before defeat.&rdquo;
+                </blockquote>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Hobbies Section */}
-      <section id="hobbies" className="py-24 relative bg-card-bg/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-accent-light font-medium tracking-wider uppercase text-sm mb-3">
-              Beyond Business
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold">
-              Interests &amp; <span className="gradient-text">Hobbies</span>
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="glass-card rounded-2xl p-6">
-              <div className="text-3xl mb-4">&#x1F3C8;</div>
-              <h3 className="font-semibold mb-2">Sports &amp; Fitness</h3>
+      {/* Personal Interests Section */}
+      <section id="hobbies" className="py-20 bg-section-alt">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-10">
+            Personal Interests
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="bg-white rounded-xl p-6 border border-border">
+              <h3 className="text-sm font-semibold mb-2">Sports &amp; Fitness</h3>
               <p className="text-muted text-sm leading-relaxed">
-                A lifelong sports enthusiast who stays active and draws parallels between
-                athletic discipline and business strategy.
+                A lifelong sports enthusiast who draws parallels between athletic
+                discipline and business execution.
               </p>
             </div>
-            <div className="glass-card rounded-2xl p-6">
-              <div className="text-3xl mb-4">&#x1F4DA;</div>
-              <h3 className="font-semibold mb-2">Continuous Learning</h3>
+            <div className="bg-white rounded-xl p-6 border border-border">
+              <h3 className="text-sm font-semibold mb-2">Continuous Learning</h3>
               <p className="text-muted text-sm leading-relaxed">
-                Always studying the latest in eye care technology, business strategy, and
-                innovations that can improve the lives of his patients and community.
+                Consistently studying advances in eye care technology, business
+                strategy, and health care policy.
               </p>
             </div>
-            <div className="glass-card rounded-2xl p-6">
-              <div className="text-3xl mb-4">&#x1F91D;</div>
-              <h3 className="font-semibold mb-2">Community Building</h3>
+            <div className="bg-white rounded-xl p-6 border border-border">
+              <h3 className="text-sm font-semibold mb-2">Community Engagement</h3>
               <p className="text-muted text-sm leading-relaxed">
-                Deeply invested in giving back, whether through school programs,
-                mentoring aspiring entrepreneurs, or supporting local initiatives in the
-                Detroit area.
+                Actively involved in mentorship, local initiatives, and building
+                support networks across the Detroit area.
               </p>
             </div>
-            <div className="glass-card rounded-2xl p-6">
-              <div className="text-3xl mb-4">&#x1F4A1;</div>
-              <h3 className="font-semibold mb-2">Invention &amp; Innovation</h3>
+            <div className="bg-white rounded-xl p-6 border border-border">
+              <h3 className="text-sm font-semibold mb-2">Innovation &amp; Invention</h3>
               <p className="text-muted text-sm leading-relaxed">
-                Passionate about inventing new solutions. Toriano loves brainstorming
-                ideas that sit at the intersection of health care and technology.
+                Passionate about developing original ideas at the intersection of
+                health care and technology.
               </p>
             </div>
-            <div className="glass-card rounded-2xl p-6">
-              <div className="text-3xl mb-4">&#x1F468;&#x200D;&#x1F469;&#x200D;&#x1F467;&#x200D;&#x1F466;</div>
-              <h3 className="font-semibold mb-2">Family &amp; Faith</h3>
+            <div className="bg-white rounded-xl p-6 border border-border">
+              <h3 className="text-sm font-semibold mb-2">Family</h3>
               <p className="text-muted text-sm leading-relaxed">
-                At the core of everything is family. Toriano is motivated by the desire
-                to build a legacy that his family can be proud of.
+                Motivated by the desire to build a meaningful legacy and create
+                opportunities for the next generation.
               </p>
             </div>
-            <div className="glass-card rounded-2xl p-6">
-              <div className="text-3xl mb-4">&#x1F30D;</div>
-              <h3 className="font-semibold mb-2">Travel &amp; Culture</h3>
+            <div className="bg-white rounded-xl p-6 border border-border">
+              <h3 className="text-sm font-semibold mb-2">Travel &amp; Culture</h3>
               <p className="text-muted text-sm leading-relaxed">
-                Enjoys exploring new places and cultures, gaining perspectives that
-                enrich both his personal life and his approach to business.
+                Enjoys exploring new places and perspectives that inform both his
+                personal outlook and professional approach.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA / Contact Section */}
-      <section className="py-24 relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="glass-card rounded-2xl p-8 md:p-12 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-gold/5" />
-            <div className="relative z-10">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Let&apos;s <span className="gradient-text">Connect</span>
-              </h2>
-              <p className="text-muted max-w-lg mx-auto mb-8 leading-relaxed">
-                Whether you&apos;re interested in eye care services, business
-                collaboration, or community partnerships — I&apos;d love to hear from you.
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
-                <a
-                  href="https://myeyerx.net"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white px-6 py-3 rounded-full font-medium transition-colors"
-                >
-                  <Globe className="w-4 h-4" />
-                  MyEyeRx.net
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/toriano-dewberry-33882939/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-card-border hover:border-accent text-foreground px-6 py-3 rounded-full font-medium transition-colors"
-                >
-                  <LinkedinIcon className="w-4 h-4" />
-                  LinkedIn
-                </a>
-                <a
-                  href="https://www.facebook.com/toriano1/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-card-border hover:border-accent text-foreground px-6 py-3 rounded-full font-medium transition-colors"
-                >
-                  <FacebookIcon className="w-4 h-4" />
-                  Facebook
-                </a>
-              </div>
-              <div className="flex flex-wrap items-center justify-center gap-6 text-muted text-sm">
-                <a
-                  href="tel:7346441804"
-                  className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
-                >
-                  <Phone className="w-4 h-4" />
-                  734-644-1804
-                </a>
-                <a
-                  href="mailto:Tory@myeyerx.net"
-                  className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
-                >
-                  <Mail className="w-4 h-4" />
-                  Tory@myeyerx.net
-                </a>
-              </div>
-            </div>
+      {/* Contact Section */}
+      <section className="py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-4">
+            Get in Touch
+          </h2>
+          <p className="text-muted max-w-md mx-auto mb-8 leading-relaxed">
+            For inquiries about eye care services, business collaboration, or
+            community partnerships.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+            <a
+              href="https://myeyerx.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors"
+            >
+              <Globe className="w-4 h-4" />
+              MyEyeRx.net
+            </a>
+            <a
+              href="https://www.linkedin.com/in/toriano-dewberry-33882939/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-border hover:border-accent/40 text-muted hover:text-foreground px-5 py-2.5 rounded-lg text-sm font-medium transition-colors"
+            >
+              <LinkedinIcon className="w-4 h-4" />
+              LinkedIn
+            </a>
+            <a
+              href="https://www.facebook.com/toriano1/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-border hover:border-accent/40 text-muted hover:text-foreground px-5 py-2.5 rounded-lg text-sm font-medium transition-colors"
+            >
+              <FacebookIcon className="w-4 h-4" />
+              Facebook
+            </a>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-muted text-sm">
+            <a
+              href="tel:7346441804"
+              className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              734-644-1804
+            </a>
+            <a
+              href="mailto:Tory@myeyerx.net"
+              className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
+            >
+              <Mail className="w-4 h-4" />
+              Tory@myeyerx.net
+            </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-card-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted">
+      <footer className="py-8 border-t border-border">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
             <p>&copy; {new Date().getFullYear()} Toriano Dewberry. All rights reserved.</p>
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-5">
               <a
                 href="https://myeyerx.net"
                 target="_blank"
@@ -619,14 +518,6 @@ export default function Home() {
                 className="hover:text-foreground transition-colors"
               >
                 MyEyeRx.net
-              </a>
-              <a
-                href="https://dewberryoptical.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-foreground transition-colors"
-              >
-                Dewberry Optical
               </a>
               <a
                 href="https://www.linkedin.com/in/toriano-dewberry-33882939/"

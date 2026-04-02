@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b1120;
-  --foreground: #f0f4f8;
-  --accent: #2563eb;
-  --accent-light: #3b82f6;
-  --gold: #d4a853;
-  --card-bg: #111827;
-  --card-border: #1e293b;
-  --muted: #94a3b8;
+  --background: #ffffff;
+  --foreground: #111827;
+  --accent: #1e3a5f;
+  --accent-light: #2a5a8f;
+  --border: #e5e7eb;
+  --card-bg: #f9fafb;
+  --muted: #6b7280;
+  --section-alt: #f3f4f6;
 }
 
 @theme inline {
@@ -16,10 +16,10 @@
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
-  --color-gold: var(--gold);
+  --color-border: var(--border);
   --color-card-bg: var(--card-bg);
-  --color-card-border: var(--card-border);
   --color-muted: var(--muted);
+  --color-section-alt: var(--section-alt);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -37,30 +37,4 @@ html {
 ::selection {
   background: var(--accent);
   color: white;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.7s ease-out forwards;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent-light), var(--gold));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.glass-card {
-  background: rgba(17, 24, 39, 0.7);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(30, 41, 59, 0.5);
-}
-
-.hero-gradient {
-  background: radial-gradient(ellipse at 50% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 60%);
 }
